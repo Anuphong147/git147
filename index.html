@@ -1,18 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enter the Next-Gen Roblox Metaverse. Discover millions of immersive 3D experiences created by a global community of developers and players.">
+  <meta name="keywords" content="Roblox, Metaverse, Online Games, UGC, Roblox Studio, DevEx, Virtual World, 3D Games">
+  <meta name="author" content="Roblox Next-Gen Platform">
+  <title>Roblox | Enter the Infinite Metaverse</title>
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello</h1>
-    <h2>1234</h2>
 
-    <p>Branch develop</p>
+  <!-- Ambient Glowing Orbs Background -->
+  <div class="bg-glow-container" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
 
-    <script>
-        console.log('Hello')
-        </script>
+  <!-- Header / Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand-logo" id="brandLogo">
+        <div class="logo-icon">
+          <div class="logo-square"></div>
+        </div>
+        <span class="logo-text">ROBLOX</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#experiences" class="nav-link">Discover</a></li>
+          <li><a href="#avatar" class="nav-link">Marketplace</a></li>
+          <li><a href="#devex" class="nav-link">DevEx</a></li>
+          <li><a href="#community" class="nav-link">Community</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary js-open-modal" id="loginNavBtn">Log In</button>
+        <button class="btn btn-primary js-open-modal" id="playNavBtn">
+          <i class="fa-solid fa-play"></i> Play Now
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text-content">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Roblox 2.0 Next-Gen Update Live
+          </div>
+          
+          <h1 class="hero-title">
+            Enter the Infinite <span class="gradient-text">Metaverse</span>
+          </h1>
+
+          <p class="hero-description">
+            Imagine, create, and play together with over 123 million daily players across an endless universe of user-generated 3D experiences.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-glow js-open-modal" id="heroPlayBtn">
+              <i class="fa-solid fa-rocket"></i> Start Playing Free
+            </button>
+            <a href="#experiences" class="btn btn-secondary" id="heroExploreBtn">
+              <i class="fa-solid fa-compass"></i> Explore Games
+            </a>
+          </div>
+
+          <div class="platform-badges">
+            <span class="platform-label">Available on</span>
+            <div class="platform-icons">
+              <div class="platform-icon-item"><i class="fa-desktop"></i> PC & Mac</div>
+              <div class="platform-icon-item"><i class="fa-mobile-screen"></i> iOS & Android</div>
+              <div class="platform-icon-item"><i class="fa-gamepad"></i> Consoles</div>
+              <div class="platform-icon-item"><i class="fa-vr-cardboard"></i> VR</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="main-hero-card">
+            <canvas id="heroCanvas" class="hero-banner-canvas"></canvas>
+            <div class="hero-meta">
+              <div class="hero-meta-title">
+                <span>Featured Experience</span>
+                <span class="live-badge"><i class="fa-solid fa-circle"></i> 412K Playing</span>
+              </div>
+              <div class="hero-meta-stats">
+                <span><i class="fa-solid fa-thumbs-up"></i> 96% Rating</span>
+                <span><i class="fa-solid fa-cube"></i> Luau 3D Engine</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-card floating-card-1">
+            <i class="fa-solid fa-shield-halved" style="color: var(--primary-cyan); font-size: 20px;"></i>
+            <div>
+              <div style="font-weight: 700; font-size: 13px;">Verified Safe</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Age 13+ Verified</div>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card-2">
+            <i class="fa-solid fa-coins" style="color: #ffd700; font-size: 20px;"></i>
+            <div>
+              <div style="font-weight: 700; font-size: 13px;">Instant DevEx Cashout</div>
+              <div style="font-size: 11px; color: var(--accent-green);">$800M+ Paid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Stats Counter Bar Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-target="123" data-suffix="M+">0</div>
+            <div class="stat-label">Daily Active Users (DAUs)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="29" data-suffix="B+">0</div>
+            <div class="stat-label">Hours Engaged Annually</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="5.5" data-suffix="M+">0</div>
+            <div class="stat-label">Unique 3D Experiences</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="800" data-prefix="$" data-suffix="M+">0</div>
+            <div class="stat-label">Annual Creator Earnings</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Experiences Section -->
+    <section class="experiences-section" id="experiences">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Unlimited Possibilities</span>
+          <h2 class="section-title">Trending Experiences</h2>
+          <p class="section-desc">
+            Discover top-rated worlds created by global developers. Jump in with friends anytime, anywhere.
+          </p>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Genres</button>
+          <button class="filter-tab" data-filter="action">Action & Battle</button>
+          <button class="filter-tab" data-filter="rpg">RPG & Adventure</button>
+          <button class="filter-tab" data-filter="roleplay">Roleplay</button>
+          <button class="filter-tab" data-filter="simulator">Simulator</button>
+          <button class="filter-tab" data-filter="horror">Horror</button>
+        </div>
+
+        <div class="games-grid">
+          <!-- Game Card 1 -->
+          <div class="game-card" data-category="action">
+            <div class="game-thumb-wrapper">
+              <canvas class="game-thumb-canvas"></canvas>
+              <span class="game-tag-badge">Action</span>
+            </div>
+            <div class="game-info">
+              <h3 class="game-title">Blox Legends Online</h3>
+              <p class="game-creator">By Studio Apex</p>
+              <div class="game-stats-row">
+                <span class="game-stat-playing"><i class="fa-solid fa-user"></i> 142.5K</span>
+                <span class="game-stat-rating"><i class="fa-solid fa-star"></i> 94%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Card 2 -->
+          <div class="game-card" data-category="roleplay">
+            <div class="game-thumb-wrapper">
+              <canvas class="game-thumb-canvas"></canvas>
+              <span class="game-tag-badge">Roleplay</span>
+            </div>
+            <div class="game-info">
+              <h3 class="game-title">Brookhaven 2026</h3>
+              <p class="game-creator">By Wolfpaq</p>
+              <div class="game-stats-row">
+                <span class="game-stat-playing"><i class="fa-solid fa-user"></i> 320.1K</span>
+                <span class="game-stat-rating"><i class="fa-solid fa-star"></i> 98%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Card 3 -->
+          <div class="game-card" data-category="rpg">
+            <div class="game-thumb-wrapper">
+              <canvas class="game-thumb-canvas"></canvas>
+              <span class="game-tag-badge">RPG</span>
+            </div>
+            <div class="game-info">
+              <h3 class="game-title">Dungeon Quest Reborn</h3>
+              <p class="game-creator">By vKPO Studios</p>
+              <div class="game-stats-row">
+                <span class="game-stat-playing"><i class="fa-solid fa-user"></i> 89.2K</span>
+                <span class="game-stat-rating"><i class="fa-solid fa-star"></i> 92%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Card 4 -->
+          <div class="game-card" data-category="simulator">
+            <div class="game-thumb-wrapper">
+              <canvas class="game-thumb-canvas"></canvas>
+              <span class="game-tag-badge">Simulator</span>
+            </div>
+            <div class="game-info">
+              <h3 class="game-title">Pet Universe X</h3>
+              <p class="game-creator">By BIG Games</p>
+              <div class="game-stats-row">
+                <span class="game-stat-playing"><i class="fa-solid fa-user"></i> 210.8K</span>
+                <span class="game-stat-rating"><i class="fa-solid fa-star"></i> 95%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Card 5 -->
+          <div class="game-card" data-category="horror">
+            <div class="game-thumb-wrapper">
+              <canvas class="game-thumb-canvas"></canvas>
+              <span class="game-tag-badge">Horror</span>
+            </div>
+            <div class="game-info">
+              <h3 class="game-title">Doors: The Abyss</h3>
+              <p class="game-creator">By LSPLASH</p>
+              <div class="game-stats-row">
+                <span class="game-stat-playing"><i class="fa-solid fa-user"></i> 115.4K</span>
+                <span class="game-stat-rating"><i class="fa-solid fa-star"></i> 97%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Card 6 -->
+          <div class="game-card" data-category="action">
+            <div class="game-thumb-wrapper">
+              <canvas class="game-thumb-canvas"></canvas>
+              <span class="game-tag-badge">Action</span>
+            </div>
+            <div class="game-info">
+              <h3 class="game-title">Blade Ball Masters</h3>
+              <p class="game-creator">By W-Games</p>
+              <div class="game-stats-row">
+                <span class="game-stat-playing"><i class="fa-solid fa-user"></i> 98.7K</span>
+                <span class="game-stat-rating"><i class="fa-solid fa-star"></i> 91%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Avatar Customizer Section -->
+    <section class="avatar-section" id="avatar">
+      <div class="container avatar-grid">
+        <div class="avatar-preview-box">
+          <div class="avatar-stage">
+            <canvas id="avatarCanvas" class="avatar-canvas" width="260" height="320"></canvas>
+          </div>
+          <div class="avatar-controls">
+            <button class="item-option-btn active" data-item="cyber-visor">
+              <i class="fa-solid fa-glasses"></i> Cyber Visor
+            </button>
+            <button class="item-option-btn" data-item="neon-horns">
+              <i class="fa-solid fa-bolt"></i> Neon Horns
+            </button>
+            <button class="item-option-btn" data-item="golden-crown">
+              <i class="fa-solid fa-crown"></i> Golden Crown
+            </button>
+          </div>
+        </div>
+
+        <div class="avatar-info-content">
+          <span class="section-subtitle">Express Yourself</span>
+          <h2 class="section-title">Infinite Avatar Customization</h2>
+          <p class="section-desc" style="margin-bottom: 24px;">
+            Customize your virtual identity with millions of UGC items created by artists worldwide. Collect rare gear, clothing, and emote animations to stand out.
+          </p>
+          <div style="display: flex; gap: 16px;">
+            <button class="btn btn-primary js-open-modal">
+              <i class="fa-solid fa-shirt"></i> Visit Marketplace
+            </button>
+            <button class="btn btn-secondary js-open-modal">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Open Studio Editor
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DevEx Calculator Section -->
+    <section class="devex-section" id="devex">
+      <div class="container">
+        <div class="devex-card">
+          <div class="devex-text">
+            <span class="section-subtitle">Build & Monetize</span>
+            <h2 class="section-title" style="font-size: 32px; margin-bottom: 12px;">
+              Turn Your Passion into Real Earnings
+            </h2>
+            <p class="section-desc">
+              With the Developer Exchange (DevEx) program, convert Robux earned from your experiences into real USD cashout.
+            </p>
+
+            <div class="devex-input-group">
+              <label for="robuxInput" class="devex-label">Enter Robux Amount:</label>
+              <div class="devex-input-wrapper">
+                <input type="number" id="robuxInput" class="devex-input" value="100000" step="50000" min="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="devex-result-box">
+            <div style="font-size: 14px; color: var(--text-muted); font-weight: 600;">Estimated USD Cashout</div>
+            <div class="devex-result-value" id="usdResult">$350.00</div>
+            <div style="font-size: 12px; color: var(--text-dim);">Based on standard DevEx cashout rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community & Events Section -->
+    <section class="community-section" id="community" style="padding: 80px 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Global Network</span>
+          <h2 class="section-title">Join Millions of Creators</h2>
+          <p class="section-desc">
+            Connect with developers, join community groups, and participate in live metaverse concerts.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Play / Download Modal -->
+  <div class="modal-overlay" id="playModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div style="text-align: center;">
+        <div class="logo-icon" style="margin: 0 auto 20px auto; width: 48px; height: 48px;">
+          <div class="logo-square" style="width: 18px; height: 18px;"></div>
+        </div>
+        <h3 style="font-size: 28px; margin-bottom: 12px;">Get Started with Roblox</h3>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 28px;">
+          Download the client or log in to launch your adventure in the metaverse.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <button class="btn btn-primary" onclick="alert('Launching Roblox Client...')">
+            <i class="fa-solid fa-download"></i> Download Roblox App
+          </button>
+          <button class="btn btn-secondary" onclick="alert('Redirecting to Quick Login...')">
+            <i class="fa-solid fa-key"></i> Quick Passkey Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="brand-logo">
+            <div class="logo-icon"><div class="logo-square"></div></div>
+            <span class="logo-text">ROBLOX</span>
+          </a>
+          <p class="footer-brand-desc">
+            Roblox is ushering in the next generation of entertainment. Imagine, create, and play together with millions across 3D user-generated worlds.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Discover Games</a></li>
+            <li><a href="#" class="footer-link">Roblox Studio</a></li>
+            <li><a href="#" class="footer-link">Marketplace</a></li>
+            <li><a href="#" class="footer-link">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Developers</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">DevEx Program</a></li>
+            <li><a href="#" class="footer-link">Creator Hub</a></li>
+            <li><a href="#" class="footer-link">Luau Docs</a></li>
+            <li><a href="#" class="footer-link">Open Source</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Safety & Terms</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Parents & Safety</a></li>
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Community Standards</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Roblox Corporation. All Rights Reserved.</div>
+        <div style="display: flex; gap: 16px; font-size: 18px; color: var(--text-muted);">
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-discord"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
 </body>
 </html>
